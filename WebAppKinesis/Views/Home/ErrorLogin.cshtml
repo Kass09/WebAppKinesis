@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "ErrorLogin";
+}
+<style>
+    .btn a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .regresar {
+        width: 30%;
+    }
+</style>
+
+<h2>Error en el Inicio de sesion</h2>
+<br />
+<h3>@ViewBag.message</h3>
+<div class="btn btn-success regresar">
+    @Html.ActionLink("Regresar", "Index", "Home")
+</div>
+

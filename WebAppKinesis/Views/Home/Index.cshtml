@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Content/Style.css" rel="stylesheet" />
+
+<div class="wrapper">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <div class="form-signin">
+            <h2 class="form-signin-heading">Iniciar Sesion</h2>
+            <div class="form-group">
+                <input type="text" class="form-control" name="username1" placeholder="Usuario" required autofocus="" />
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" name="password1" placeholder="Contraseña" required />
+            </div>
+            <input class="btn btn-lg btn-primary btn-block" type="submit" value="Ingresar" id="Submit" />
+        </div>
+    }
+</div>
+

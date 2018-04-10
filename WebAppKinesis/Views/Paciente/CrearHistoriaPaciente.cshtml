@@ -1,0 +1,191 @@
+﻿@model WebAppKinesis.Models.Pacientes
+
+@{
+    ViewBag.Title = "Registrar Historia del Paciente";
+}
+
+<h2>CrearHistoriaPaciente</h2>
+
+<div class="panel">
+    <div class="panel-heading text-left"><h4>1. INFORMACION PERSONAL:</h4></div>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary()
+        <div class="form-row">
+            <div class="form-group col-md-8">
+                <label class="float-left">Cedula </label>
+                @Html.TextBoxFor(x => x.Cedula, new { @class = "form-control", @required = "" })
+            </div>
+            <div class="form-group col-md-4">
+                <label class="float-left">Fecha de Registro</label>
+                @Html.TextBoxFor(x => x.FechaNacimiento, new { @class = "form-control", @placeholder = DateTime.Today.Date.ToShortDateString(), @readonly = "" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="float-left">Nombres y Apellidos</label>
+            @Html.TextBoxFor(x => x.Nombres, new { @class = "form-control", @required = "" })
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-7">
+                <label class="float-left">Direccion</label>
+                @Html.TextBoxFor(x => x.Direccion, new { @class = "form-control", @required = "" })
+            </div>
+            <div class="form-group col-md-5">
+                <label class="float-left">Telefono</label>
+                @Html.TextBoxFor(x => x.Telefono, new { @class = "form-control", @required = "" })
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label class="float-left">Fecha de nacimiento</label>
+                @Html.TextBoxFor(x => x.FechaNacimiento, new { @class = "form-control", @required = "" })
+            </div>
+
+            <div class="form-group col-md-6">
+                <label class="float-left">Edad</label>
+                @Html.TextBoxFor(x => x.Edad, new { @class = "form-control", @required = "" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="float-left">Profesion</label>
+            @Html.TextBoxFor(x => x.Profesion, new { @class = "form-control", @required = "" })
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label class="float-left">Estado Civil</label>
+                @Html.DropDownListFor(x => x.EstadoCivil, new[]
+                                                            {
+                new SelectListItem() {Text = "Soltera", Value = "Soltera" },
+                new SelectListItem() {Text = "Casada", Value = "Casada" },
+            }, "Seleccione una opcion", new { @class = "form-control" })
+            </div>
+            <div class="form-group col-md-6">
+                <label class="float-left">Numero de Hijos</label>
+                @Html.TextBoxFor(x => x.NumHijos, new { @class = "form-control", @required = "" })
+            </div>
+        </div>
+
+        <hr class="border" />
+        <br />
+
+        <div class="panel-heading text-left"><h5>2. DATOS SOBRE ESTADO DE SALUD Y MODO DE VIDA:</h5></div>
+        <br />
+        <div class="form-group">
+            <label class="float-left">Sufre o a sufrido de problemas:</label>
+            @Html.DropDownListFor(x => x.HistPac.DescEnfermedad, new[]
+                 {
+            new SelectListItem() {Text = "Cardiacos", Value = "Cardiacos"},
+            new SelectListItem() {Text = "Endocrino", Value = "Endocrino"},
+            new SelectListItem() {Text = "Digestivo", Value = "Digestivo" },
+            new SelectListItem() {Text = "Circulacion", Value = "Circulacion" },
+            new SelectListItem() {Text = "Tension Arterial", Value = "Tension Arterial" },
+        }, "Seleccionar...", new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label class="float-left">Otros:</label>
+            @Html.TextBoxFor(x => x.HistPac.OtraEnfermedad, new { @class = "form-control" })
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-3">
+                <label class="float-left">Peso actual</label>
+                @Html.TextBoxFor(x => x.HistPac.Peso, new { @class = "form-control", @placeholder = "Kilos", @required = "" })
+            </div>
+
+            <div class="form-group col-md-3">
+                <label class="float-left">Talla </label>
+                @Html.TextBoxFor(x => x.HistPac.Talla, new { @class = "form-control", @required = "" })
+            </div>
+            <div class="form-group col-md-3">
+                <label class="float-left">Masa corporal</label>
+                @Html.TextBoxFor(x => x.HistPac.MasaMuscular, new { @class = "form-control" })
+            </div>
+            <div class="form-group col-md-3">
+                <label class="float-left">Altura</label>
+                @Html.TextBoxFor(x => x.HistPac.Altura, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="float-left">Silueta</label>
+            @Html.DropDownListFor(x => x.HistPac.Silueta, new[]
+            {
+            new SelectListItem() {Text = "Pequeña", Value = "Pequeña" },
+            new SelectListItem() {Text = "Mediana", Value = "Mediana" },
+            new SelectListItem() {Text = "Grande", Value = "Grande" },
+            }, "Seleccionar...", new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label class="float-left">Costumbres Alimenticias:</label>
+            @Html.TextAreaFor(x => x.HistPac.CostumbreAlimenticias, new { @class = "form-control" })
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label class="float-left"> Modo de Vida:</label>
+                <div class="form-check form-check-inline">
+                    @Html.RadioButtonFor(x => x.HistPac.ModoVida, "Activa", new { @class = "form-check-input" })
+                    <label class="form-check-label">Activa</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    @Html.RadioButtonFor(x => x.HistPac.ModoVida, "Sedentaria", new { @class = "form-check-input" })
+                    <label class="form-check-label">Sedentaria</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label> Fuma:</label>
+                <div class="form-check form-check-inline">
+                    @Html.RadioButtonFor(x => x.HistPac.SiFuma, "Si", new { @class = "form-check-input" })
+                    <label class="form-check-label">Si</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    @Html.RadioButtonFor(x => x.HistPac.SiFuma, "No", new { @class = "form-check-input" })
+                    <label class="form-check-label">No</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    @Html.RadioButtonFor(x => x.HistPac.SiFuma, "Ocasionalmente", new { @class = "form-check-input" })
+                    <label class="form-check-label">Ocasionalmente</label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label class="float-left">Alcohol:</label>
+            @Html.DropDownListFor(x => x.HistPac.SiAlcohol, new[]
+                      {
+        new SelectListItem() {Text = "Si", Value = "Si" },
+        new SelectListItem() {Text = "No", Value = "No" },
+        new SelectListItem() {Text = "Ocasionalmente", Value = "Ocasionalmente" },
+    }, "Seleccionar...", new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label class="float-left">Calidad de Sueño</label>
+            @Html.DropDownListFor(x => x.HistPac.CalidadSueño, new[]
+                      {
+        new SelectListItem() {Text = "Buena", Value = "Buena" },
+        new SelectListItem() {Text = "Mala", Value = "Mala" },
+        new SelectListItem() {Text = "Normal", Value = "Normal" },
+    }, "Seleccionar...", new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            <label class="float-left">Deportes practicados</label>
+            @Html.TextBoxFor(x => x.HistPac.DeportesPracticados, new { @class = "form-control" })
+        </div>
+        <br />
+
+        <button type="submit" id="btn-histo" class="btn btn-primary">Guardar</button>
+    }
+</div>
+
+
+
+
