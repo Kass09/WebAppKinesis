@@ -1,0 +1,154 @@
+﻿@model WebAppKinesis.Models.Pacientes
+
+@{
+    ViewBag.Title = "Historia Paciente";
+}
+
+<h2 style="margin-top: 50px;">1. Informacion del Paciente</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cedula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaNacimiento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Edad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Profesion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadoCivil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumHijos)
+        </th>
+        <th></th>
+    </tr>
+
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Cedula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Nombres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.FechaNacimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Edad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.Profesion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.EstadoCivil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.NumHijos)
+        </td>
+    </tr>
+
+</table>
+<hr />
+<br />
+
+<h2>2. Informacion sobre estado de salud y modo de vida</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HistPac.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HistPac.DescEnfermedad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HistPac.OtraEnfermedad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HistPac.Peso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HistPac.Talla)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HistPac.Altura)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HistPac.MasaMuscular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HistPac.Silueta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HistPac.DescEnfermedad)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.HistPac.CostumbreAlimenticias)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HistPac.ModoVida)
+        </th>
+
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.HistPac.Fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.HistPac.DescEnfermedad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.HistPac.OtraEnfermedad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.HistPac.Peso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.HistPac.Talla)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.HistPac.Altura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.HistPac.MasaMuscular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.HistPac.Silueta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.HistPac.CostumbreAlimenticias)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => modelItem.HistPac.ModoVida)
+        </td>
+    </tr>
+
+</table>
+
+    <p>
+        @Html.ActionLink("Regresar", "ConsultarHistorias")
+    </p>

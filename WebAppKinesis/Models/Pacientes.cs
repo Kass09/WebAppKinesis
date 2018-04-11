@@ -15,7 +15,7 @@ namespace WebAppKinesis.Models
         public string Edad { get; set; }
         public string Profesion { get; set; }
         public string EstadoCivil { get; set; }
-        public int NumHijos { get; set; }
+        public string NumHijos { get; set; }
 
         public HistoriaClinica HistPac { get; set; }
 

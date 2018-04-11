@@ -3,16 +3,15 @@
     ViewBag.Title = "HomePage";
 }
 
-<h2>HomePage</h2>
+<h2 style="margin-top: 50px;">Home Page</h2>
 <div class="wrapper">
     <div class="form-row">
-        <div class="col-md-6 btn btn-success cajas">
-            @Html.ActionLink("Agregar Historia Medica", "CrearHistoriaPaciente", "Paciente")
+        <div class="col-md-6 btn btn-primary">
+                @Html.ActionLink("Agregar Historia Medica", "CrearHistoriaPaciente", "Paciente")
         </div>
-        <div class="col-md-6 btn btn-success cajas">
+        <div class="col-md-6 btn btn-dark">
             @Html.ActionLink("Consultar Historias Medicas", "ConsultarHistorias", "Paciente")
         </div>
     </div>
 </div>
-<br />  
 

@@ -12,9 +12,14 @@ namespace WebAppKinesis.Models
             return new LoginProtocol().LoginFindMySql(user, pass);
         }
 
-        public Boolean AddHistoria(Pacientes pac)
+        public int AddHistoria(Pacientes pac)
         {
             return new PacienteProtocol().AddHistoria(pac);
+        }
+
+        public Pacientes BuscarPaciente(string cedula)
+        {
+            return new PacienteProtocol().ListarPaciente(cedula);
         }
     }
 }

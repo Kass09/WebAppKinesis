@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "ConsultarHistorias";
+}
+
+<div class="container-full">
+    <div class="row">
+
+        <div class="col-md-12 text-center v-center">
+
+            <h1 class="tittleCon">Consultar Historial Clinico Por Paciente</h1>
+            <h5>Realiza la busqueda con el numero de cedula del paciente</h5>
+
+            <br>
+            @using (Html.BeginForm())
+             {
+                <div class="input-group input-group-lg offset-sm-2 col-sm-8">
+                    <input type="text" class="form-control" name="NumCedula" placeholder="N° Cedula del Paciente" required autofocus="">
+                    <span class="input-group-append"><button class="btn btn-lg btn-primary" type="submit">Buscar</button></span>
+                </div>
+                <br /><br /><br />  
+             }
+        </div>
+
+    </div> 
+
+</div>
+

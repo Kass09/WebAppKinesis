@@ -13,9 +13,9 @@ namespace WebAppKinesis.Models
         public string DescEnfermedad { get; set; }
         public string OtraEnfermedad { get; set; }
         public string Peso { get; set; }
-        public float Talla { get; set; }
-        public float MasaMuscular { get; set; }
-        public float Altura { get; set; }
+        public string Talla { get; set; }
+        public string MasaMuscular { get; set; }
+        public string Altura { get; set; }
         public string Silueta { get; set; }
         public string CostumbreAlimenticias { get; set; }
 

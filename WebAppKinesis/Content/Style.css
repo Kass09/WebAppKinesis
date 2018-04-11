@@ -1,5 +1,6 @@
 ﻿@import "bourbon";
 
+
 .wrapper {
     margin-top: 80px;
     margin-bottom: 80px;
@@ -43,8 +44,34 @@ input[type="password"] {
     height: 45px;
 }
 
-.caja{
-    border-radius: 10px;
+.btn a {
+    color: white;
     width: 200px;
     height: 200px;
+    text-decoration: none;
+}
+
+
+.tittleCon {
+    margin-top: 30px;
+}
+
+
+.container-full {
+    margin: 40px auto;
+    width: 100%;
+    min-height: 100%;
+    /*background-color: #110022;*/
+    background: #F1F1F1;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+    .container-full a {
+        color: #efefef;
+        text-decoration: none;
+    }
+
+.v-center {
+    margin-top: 7%;
 }

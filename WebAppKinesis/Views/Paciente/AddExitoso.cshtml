@@ -1,0 +1,24 @@
+﻿@model WebAppKinesis.Models.Pacientes
+@{
+    ViewBag.Title = "Exitoso - Kinesis";
+}
+
+<style>
+    .btn a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .regresar {
+        width: 30%;
+    }
+</style>
+
+<br />
+<h1>La historia Clinical del Paciente </h1>
+<span class="alert-success lead">@Model.Nombres se ha registrado con exito con Fecha de registro: <b>@Model.HistPac.FechaRegistro</b> </span>
+<br />
+<h2>@ViewBag.message</h2>
+<div class="btn btn-success regresar">
+    @Html.ActionLink("Regresar", "CrearHistoriaPaciente", "Paciente")
+</div>
