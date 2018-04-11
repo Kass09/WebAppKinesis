@@ -3,6 +3,14 @@
     ViewBag.Title = "HomePage";
 }
 
+<style> 
+    .btn a{
+        text-decoration: none;
+        color: white;
+    }
+
+</style>
+
 <h2 style="margin-top: 50px;">Home Page</h2>
 <div class="wrapper">
     <div class="form-row">
@@ -11,6 +19,12 @@
         </div>
         <div class="col-md-6 btn btn-dark">
             @Html.ActionLink("Consultar Historias Medicas", "ConsultarHistorias", "Paciente")
+        </div>
+    </div>
+    <br />
+    <div class="form-row">
+        <div class="col-md-6 offset-md-3 btn btn-success">
+            @Html.ActionLink("Salir", "Index","Home")
         </div>
     </div>
 </div>

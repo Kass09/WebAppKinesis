@@ -123,7 +123,7 @@ namespace WebAppKinesis.Models
                 using (MySqlCommand command = new MySqlCommand(consulta, DBHelper.Conection()))
                 {
                     lectorMysql = command.ExecuteReader();
-                    while (lectorMysql.Read())
+                    if (lectorMysql.Read())
                     {
                         persona.Cedula = lectorMysql["Cedula"].ToString();
                         persona.Nombres = lectorMysql["Nombres"].ToString();
@@ -148,6 +148,10 @@ namespace WebAppKinesis.Models
                         persona.HistPac.SiAlcohol = lectorMysql["SiAlcohol"].ToString();
                         persona.HistPac.CalidadSueño = lectorMysql["CalidadSueno"].ToString();
                         persona.HistPac.DeportesPracticados = lectorMysql["DeportesPracticados"].ToString();
+                    }
+                    else
+                    {
+                        persona = null;
                     }
                 }
                 lectorMysql.Close();

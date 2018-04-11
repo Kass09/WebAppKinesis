@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "NoExisteCedula";
+}
+
+<style>
+    .btn a {
+        color: white;
+        text-decoration: none;
+    }
+
+    .regresar {
+        width: 30%;
+    }
+</style>
+
+<div class="text-center">
+    <h2 style="margin-top: 50px" ;>Error en  la consulta</h2>
+    <br />
+    <h3>@ViewBag.message</h3>
+    <div class="btn btn-success regresar">
+        @Html.ActionLink("Regresar", "ConsultarHistorias", "Paciente")
+    </div>
+</div>
+<br />
+

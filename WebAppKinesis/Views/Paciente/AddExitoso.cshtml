@@ -15,10 +15,17 @@
 </style>
 
 <br />
-<h1>La historia Clinical del Paciente </h1>
-<span class="alert-success lead">@Model.Nombres se ha registrado con exito con Fecha de registro: <b>@Model.HistPac.FechaRegistro</b> </span>
-<br />
-<h2>@ViewBag.message</h2>
-<div class="btn btn-success regresar">
-    @Html.ActionLink("Regresar", "CrearHistoriaPaciente", "Paciente")
+<div class="text-center">
+    <h1>La historia Clinical del Paciente </h1>
+    <span class="alert-success">@Model.Nombres se ha registrado con exito con Fecha de registro: <b>@Model.HistPac.FechaRegistro</b> </span>
+    <br />
+    <h2>@ViewBag.message</h2>
+    <div class="btn btn-success regresar">
+        @Html.ActionLink("Regresar", "CrearHistoriaPaciente", "Paciente")
+    </div>
+    |
+
+    <div class="btn btn-primary regresar">
+        @Html.ActionLink("Consultar Detalles", "ConsultarHistorias", "Paciente")
+    </div>
 </div>

@@ -59,7 +59,17 @@ namespace WebAppKinesis.Controllers
         public ActionResult ConsultarHistorias(string NumCedula)
         {
             ModelFacade model = new ModelFacade();
-            return View("HistoriaPaciente", model.BuscarPaciente(NumCedula));
+            var per = model.BuscarPaciente(NumCedula);
+            if (per != null)
+            {
+                return View("HistoriaPaciente", per);
+            }
+            else
+            {
+                ViewBag.message = "El usuario no se encuentra registrado en el sistema";
+                return View("NoExisteCedula");
+            }
+            
         }
     }
 }

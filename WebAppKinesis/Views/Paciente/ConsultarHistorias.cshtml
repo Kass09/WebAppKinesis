@@ -13,16 +13,18 @@
 
             <br>
             @using (Html.BeginForm())
-             {
+            {
                 <div class="input-group input-group-lg offset-sm-2 col-sm-8">
                     <input type="text" class="form-control" name="NumCedula" placeholder="N° Cedula del Paciente" required autofocus="">
                     <span class="input-group-append"><button class="btn btn-lg btn-primary" type="submit">Buscar</button></span>
                 </div>
-                <br /><br /><br />  
-             }
+                <br /><br /><br />
+            }
         </div>
 
-    </div> 
-
+    </div>
+</div>
+<div>
+    @Html.ActionLink("Regresar", "HomePage", "Home")
 </div>
 

@@ -23,7 +23,6 @@ namespace WebAppKinesis.Controllers
 
             if (result == 1)
             {
-                ViewBag.message = "Inicio de sesion satisfactorio";
                 return RedirectToAction("HomePage");
             }
             else
@@ -31,12 +30,12 @@ namespace WebAppKinesis.Controllers
                 if (result == 2)
                 {
                     ViewBag.message = "Error al iniciar sesion, el usuario o la contraseña no son correctos";
-                    return RedirectToAction("ErrorLogin");
+                    return View("ErrorLogin");
                 }
                 else
                 {
-                    ViewBag.message = "User doesn’t exist - Failed Login";
-                    return RedirectToAction("ErrorLogin");
+                    ViewBag.message = "El usuario no se encuentra registrado en el sistema - Failed Login";
+                    return View("ErrorLogin");
                 }
             }
         }

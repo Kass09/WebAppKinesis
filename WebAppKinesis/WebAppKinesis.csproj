@@ -197,6 +197,7 @@
     <Content Include="Views\Paciente\ErrorUsuario.cshtml" />
     <Content Include="Views\Paciente\ConsultarHistorias.cshtml" />
     <Content Include="Views\Paciente\HistoriaPaciente.cshtml" />
+    <Content Include="Views\Paciente\NoExisteCedula.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
